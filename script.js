@@ -1,5 +1,7 @@
 window.onload = function () {
-  
+    var start = document.getElementById("start");
+    var counter = document.getElementById("counter");
+
     var questionArea = document.getElementsByClassName('questions')[0],
         answerArea   = document.getElementsByClassName('answers')[0],
         checker      = document.getElementsByClassName('checker')[0],
@@ -8,23 +10,17 @@ window.onload = function () {
        // An object that holds all the questions + possible answers.
        // In the array --> last digit gives the right answer position
         allQuestions = {
-        //   'What is Canada\'s national animal?' : ['Beaver', 'Duck', 'Horse', 'COW', 0],
-
           "What will the code: (console.log(1 + 2 * 3)) print?" : ['6', '7', '9', '123', 1],
           
-        //   'What is converted into alcohol during brewing?' : ['Grain', 'Sugar' , 'Water', 1],
-
           "Which of the following is mutable?" : ['Array', 'Number', 'string', 'boolean', 0],    
           
-        //   'In what year was Prince Andrew born? ' : ['1955', '1960', '1970', 1],
-
           "What will the code: console.log(1 == '1.0') print?" : ['NaN', 'false', 'true', 'undefined', 2],
 
           "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B', '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
+
           "What is the best description of the string slice() function?" : ['Divides a string into two',
           'Divides a string sentence into an array containing each word', 'Removes the first character from a string', 
-          'Extracts a section of a string and returns a new string', 3]
-      
+          'Extracts a section of a string and returns a new string', 3]    
       
         };
         
@@ -113,47 +109,5 @@ window.onload = function () {
     loadAnswers(current);
     
   };
-
-
-
-
-// var questions = [
-//     {
-//         prompt: "What is your name?,\n(a) john \n(b) jane \n(c)sam \n(d) jenny",
-//         answer: "a"
-//     },
-    
-//     { 
-//         prompt: "What is your favorite color?\n(a) red \n(b) blue \n(c) green \n(d) yellow",
-//         answer: "b"
-//     },
-    
-//     { 
-//         prompt: "What is your favorite animal?\n(a) cat \n(b) dog \n(c) horse\n(d) snake",
-//         answer: "c"
-//     }
-    
-// ]
-// var score = 0;
-//     for (var i = 0; i < questions.length; i++) {
-// // var ask = prompt(questions[i].prompt);
-// // var answer = questions[i].answer;
-// var response = window.prompt(questions[i].prompt);
-
-// if (response == questions[i].answer) {
-//     score++;
-//     alert("correct! answer is " + questions[i].answer);
-// }
-//     else if (response != questions[i].answer) {
-//         alert("incorrect, answer is " + questions[i].answer);
-//     } 
-// }
-
-
-//     alert("you got " + score + " out of 3 questions correct");
-
-
-
-
 
 
