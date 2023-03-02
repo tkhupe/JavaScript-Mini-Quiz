@@ -7,21 +7,25 @@ body, html {
   }
   
   .wrapper {
-    width: 430px;
+    width: 650px;
     margin: 0 auto;
     height: 100%;
     padding-top: 0px;
   }
   
   #quiz {
-    background-color: #34495E;
+    background-color: purple;
     padding-bottom: 60px;
     width: 100%;
-    border-radius: 2%;
+    border-radius: 5%;
     color: #fff;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
+    box-shadow: 0 30px 30px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+}
   
   #quiz > h1 {
     text-align: center;

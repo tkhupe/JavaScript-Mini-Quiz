@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
     <title>Javascript Mini Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <div id="quiz">
-            <h1>Javascript Mini Quiz</h1>
-            <div class="start-timer" >
-                <button id="Start" class="btn">Start Quiz!</button>
-            </div>
-            <div id="timer">
-                <div id="counter">6</div>
-                <!-- <div id="timeGauge"></div> -->
-            </div>
+      <div id="quiz">
+        <h1>Javascript Mini Quiz</h1>
+        <div class="start-timer">
+          <button id="start" class="btn">Start Quiz!</button>
+        </div>
+        <div id="timer">
+          <div id="counter">50</div>
           
-          <p class="questions"></p>
-          
-          <div class="answers"></div>         
-          
-          <div class="checkAnswers">
-            <h3>Correct?</h3>
-            <div class="checker">
-    
-            </div>
+        </div>
+
+        <p class="questions"></p>
+
+        <div class="answers"></div>
+
+        <div class="checkAnswers">
+          <h3>Correct?</h3>
+          <div class="checker">
+
           </div>
         </div>
-      </div> 
+        <div class="record-data"> 
+            <input type="text" id="Initials">Initials</input>
+            <input type="text" id="score">Score</input>
+            <button id="submit" class="btn">Submit!</button>
+          </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    
+
     <!-- <script type="text/javascript" src="script.js"></script>  -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
