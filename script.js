@@ -3,15 +3,12 @@ window.onload = function () {
     var counter = document.getElementById("counter");
     let intervalCountdown;
     var logData = document.getElementById("logData");
-
-
     var questionArea = document.getElementsByClassName('questions')[0],
         answerArea = document.getElementsByClassName('answers')[0],
         checker = document.getElementsByClassName('checker')[0],
         current = 0,
 
-        // An object that holds all the questions + possible answers.
-        // In the array --> last digit gives the right answer position
+        
         allQuestions = {
             "What will the code: (console.log(1 + 2 * 3)) print?": ['6', '7', '9', '123', 1],
 
@@ -27,21 +24,11 @@ window.onload = function () {
 
         };
 
-    // const questionTime = 10;
-    // let counter = 0;
-
-    // function startTimer() {
-    //     counter = setInterval(start) {
-    //         counter.innerHTML = counter;
-    //     }
-    // }
 
 
 
     function loadQuestion(curr) {
-        // This function loads all the question into the questionArea
-        // It grabs the current question based on the 'current'-variable
-
+        
         var question = Object.keys(allQuestions)[curr];
 
         questionArea.innerHTML = '';
@@ -49,10 +36,7 @@ window.onload = function () {
     }
 
     function loadAnswers(curr) {
-        // This function loads all the possible answers of the given question
-        // It grabs the needed answer-array with the help of the current-variable
-        // Every answer is added with an 'onclick'-function
-
+        
         var answers = allQuestions[Object.keys(allQuestions)[curr]];
 
         answerArea.innerHTML = '';
@@ -73,11 +57,7 @@ window.onload = function () {
     }
 
     function checkAnswer(i, arr) {
-        // This is the function that will run, when clicked on one of the answers
-        // Check if givenAnswer is sams as the correct one
-        // After this, check if it's the last question:
-        // If it is: empty the answerArea and let them know it's done.
-
+        
         return function () {
             var givenAnswer = i,
                 correctAnswer = arr[arr.length - 1];
@@ -105,13 +85,11 @@ window.onload = function () {
     }
 
     function addChecker(bool) {
-        // This function adds a div element to the page
-        // Used to see if it was correct or false
 
-        var createDiv = document.createElement('div'),
-            txt = document.createTextNode(current + 1);
+                var createDiv = document.createElement('div'),
+                text = document.createTextNode(current + 1);
 
-        createDiv.appendChild(txt);
+        createDiv.appendChild(text);
 
         if (bool) {
 
@@ -152,17 +130,11 @@ window.onload = function () {
 
         scoreReport.style.display = 'block';
         let finalScore = Math.round(score/ allQuestions.length * 100);
-        
-
-
-     function logData() {
-        createDiv.appendChild(input)
-        
+       
     
      }
     start.addEventListener("click", function () { begin() })
-    // Start the quiz right away
-
+    
 };
 
 
