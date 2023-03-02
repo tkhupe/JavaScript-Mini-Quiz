@@ -1,25 +1,33 @@
 window.onload = function () {
     var start = document.getElementById("start");
     var counter = document.getElementById("counter");
+    var score = document.getElementById("score");
+    var submit = document.getElementById("submit");
+    var scoreReport = document.getElementById("scoreReport");
     let intervalCountdown;
-    var logData = document.getElementById("logData");
+
+
+
     var questionArea = document.getElementsByClassName('questions')[0],
         answerArea = document.getElementsByClassName('answers')[0],
         checker = document.getElementsByClassName('checker')[0],
         current = 0,
 
-        
+
         allQuestions = {
+
             "What will the code: (console.log(1 + 2 * 3)) print?": ['6', '7', '9', '123', 1],
 
             "Which of the following is mutable?": ['Array', 'Number', 'string', 'boolean', 0],
 
             "What will the code: console.log(1 == '1.0') print?": ['NaN', 'false', 'true', 'undefined', 2],
 
-            "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B', '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
+            "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B',
+                '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
 
             "What is the best description of the string slice() function?": ['Divides a string into two',
-                'Divides a string sentence into an array containing each word', 'Removes the first character from a string',
+                'Divides a string sentence into an array containing each word',
+                'Removes the first character from a string',
                 'Extracts a section of a string and returns a new string', 3]
 
         };
@@ -28,15 +36,19 @@ window.onload = function () {
 
 
     function loadQuestion(curr) {
-        
+
         var question = Object.keys(allQuestions)[curr];
 
         questionArea.innerHTML = '';
+        
         questionArea.innerHTML = question;
+        createDiv.addEventListener("click", start(i, question));
+        loadQuestion(curr);
+        
     }
 
     function loadAnswers(curr) {
-        
+
         var answers = allQuestions[Object.keys(allQuestions)[curr]];
 
         answerArea.innerHTML = '';
@@ -57,7 +69,7 @@ window.onload = function () {
     }
 
     function checkAnswer(i, arr) {
-        
+
         return function () {
             var givenAnswer = i,
                 correctAnswer = arr[arr.length - 1];
@@ -86,8 +98,8 @@ window.onload = function () {
 
     function addChecker(bool) {
 
-                var createDiv = document.createElement('div'),
-                text = document.createTextNode(current + 1);
+        var createDiv = document.createElement('div'),
+            text = document.createTextNode(current + 1);
 
         createDiv.appendChild(text);
 
@@ -122,19 +134,32 @@ window.onload = function () {
     }
     function scoreReport() {
         let score = 0;
-
         for (var i = 0; i < Object.keys(allQuestions).length; i++) {
-            if (addChecker(true) ) {
+            if (addChecker(true)) {
                 score += 1;
             }
+            return score;
+        }
 
         scoreReport.style.display = 'block';
-        let finalScore = Math.round(score/ allQuestions.length * 100);
-       
+        let finalScore = Math.round(score / allQuestions.length * 100);
+
+    }
+    start.addEventListener("click", function () { begin() });
+
+    function removeStartButton() {
+        if (begin()) {
+             start.style.display = 'none';
+            } 
+        }
+            removeStartButton();
     
-     }
-    start.addEventListener("click", function () { begin() })
     
+    
+
+
+    submit.addEventListener("click", function () { scoreReport() })
+
 };
 
 
