@@ -130,6 +130,11 @@ window.onload = function () {
 
         } else { counter.innerHTML = value }
 
+        if (questionArea.innerHTML !== 'Done')  {
+            hideSubmitButton();
+        }
+
+
     }
 
     function begin() {
@@ -159,6 +164,10 @@ window.onload = function () {
 
     function removeStartButton() {
         start.style.display = 'none';
+    }
+
+    function hideSubmitButton() {
+        submit.style.display = 'none';
     }
 
 

@@ -21,7 +21,7 @@ body, html {
     border-radius: 5%;
     color: white;
     text-align: center;
-    box-shadow: 0 30px 30px rgba(69, 12, 167, 0.19);
+    box-shadow: 10px 10px 30px 30px whitesmoke;
      
 }
   
@@ -98,4 +98,25 @@ body, html {
   
   .false {
     background-color: #DC4437;
+  }
+  @media screen and (max-width:992px) {
+    .wrapper{
+      width: 70%;
+      padding: 10px 10px 10px 10px;
+    }
+    .questions {
+      font-size:18px;
+      padding: 5px 5px 5px 5px;
+    }
+    .answers div {
+      font-size:13px;
+      padding: 5px 5px 5px 5px;
+    }
+    .record-data {
+      padding: 5px 5px 5px 5px;
+    }
+    .checkAnswers {
+      padding: 5px 5px 5px 5px;
+    }
+    
   }
