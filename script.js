@@ -3,34 +3,32 @@ window.onload = function () {
     var counter = document.getElementById("counter");
     var score = document.getElementById("score");
     var submit = document.getElementById("submit");
-    var scoreReport = document.getElementById("scoreReport");
+    var initials = document.getElementById("initials");
+    var questionArea = document.getElementsByClassName('questions')[0];
+    var answerArea = document.getElementsByClassName('answers')[0];
+    var checker = document.getElementsByClassName('checker')[0];
     let intervalCountdown;
+    var totalScore = 0;
+    let current = 0;
 
 
+    allQuestions = {
 
-    var questionArea = document.getElementsByClassName('questions')[0],
-        answerArea = document.getElementsByClassName('answers')[0],
-        checker = document.getElementsByClassName('checker')[0],
-        current = 0,
+        "What will the code: (console.log(1 + 2 * 3)) print?": ['6', '7', '9', '123', 1],
 
+        "Which of the following is mutable?": ['Array', 'Number', 'string', 'boolean', 0],
 
-        allQuestions = {
+        "What will the code: console.log(1 == '1.0') print?": ['NaN', 'false', 'true', 'undefined', 2],
 
-            "What will the code: (console.log(1 + 2 * 3)) print?": ['6', '7', '9', '123', 1],
+        "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B',
+            '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
 
-            "Which of the following is mutable?": ['Array', 'Number', 'string', 'boolean', 0],
+        "What is the best description of the string slice() function?": ['Divides a string into two',
+            'Divides a string sentence into an array containing each word',
+            'Removes the first character from a string',
+            'Extracts a section of a string and returns a new string', 3]
 
-            "What will the code: console.log(1 == '1.0') print?": ['NaN', 'false', 'true', 'undefined', 2],
-
-            "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B',
-                '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
-
-            "What is the best description of the string slice() function?": ['Divides a string into two',
-                'Divides a string sentence into an array containing each word',
-                'Removes the first character from a string',
-                'Extracts a section of a string and returns a new string', 3]
-
-        };
+    };
 
 
 
@@ -40,11 +38,10 @@ window.onload = function () {
         var question = Object.keys(allQuestions)[curr];
 
         questionArea.innerHTML = '';
-        
+
         questionArea.innerHTML = question;
-        createDiv.addEventListener("click", start(i, question));
-        loadQuestion(curr);
-        
+
+
     }
 
     function loadAnswers(curr) {
@@ -59,7 +56,6 @@ window.onload = function () {
 
             createDiv.appendChild(text);
             createDiv.addEventListener("click", checkAnswer(i, answers));
-
 
             answerArea.appendChild(createDiv);
 
@@ -88,7 +84,10 @@ window.onload = function () {
                 loadAnswers(current);
             } else {
                 questionArea.innerHTML = 'Done';
+                percentScore = document.getElementById("percent-score");
+                percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
 
+                // score.innerHTML = totalScore;
                 answerArea.innerHTML = '';
                 clearInterval(intervalCountdown)
             }
@@ -105,19 +104,27 @@ window.onload = function () {
 
         if (bool) {
 
+            totalScore++;
             createDiv.className += 'correct';
             checker.appendChild(createDiv);
+
         } else {
             createDiv.className += 'false';
             checker.appendChild(createDiv);
+
         }
     }
     function countDown() {
         let value = counter.innerHTML
         value = value - 1;
-        if (value == 0) {
+        if (value == 0 || value < 0) {
+
+            score.innerHTML = totalScore;
 
             questionArea.innerHTML = 'Done';
+            percentScore = document.getElementById("percent-score");
+            percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
+
             answerArea.innerHTML = '';
             clearInterval(intervalCountdown)
 
@@ -130,34 +137,36 @@ window.onload = function () {
         loadQuestion(current);
         loadAnswers(current);
         intervalCountdown = setInterval(countDown, 1000);
+        removeStartButton();
 
     }
+    
     function scoreReport() {
-        let score = 0;
-        for (var i = 0; i < Object.keys(allQuestions).length; i++) {
-            if (addChecker(true)) {
-                score += 1;
-            }
-            return score;
-        }
 
-        scoreReport.style.display = 'block';
-        let finalScore = Math.round(score / allQuestions.length * 100);
+        percentScore = document.getElementById("percent-score");
+        percentScore.innerHTML = '';
+        start.style.display = 'inline-block';
+        counter.innerHTML = 50;
+        questionArea.innerHTML = '';
+        checker.innerHTML = '';
+        initials.value = '';
+        totalScore = 0;
+        current = 0;
+        score.innerHTML =''
+        
 
     }
-    start.addEventListener("click", function () { begin() });
 
     function removeStartButton() {
-        if (begin()) {
-             start.style.display = 'none';
-            } 
-        }
-            removeStartButton();
-    
-    
-    
+        start.style.display = 'none';
+    }
 
 
+
+
+
+
+    start.addEventListener("click", function () { begin() });
     submit.addEventListener("click", function () { scoreReport() })
 
 };
