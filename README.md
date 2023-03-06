@@ -17,6 +17,8 @@
 
 ![alt text](assets/images/Miniquiz.png)
 
+https://tkhupe.github.io/JavaScript-Mini-Quiz/
+
 ## Credits
 
 Questions from https://github.com/appacademy
