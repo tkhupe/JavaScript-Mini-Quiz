@@ -86,7 +86,8 @@ window.onload = function () {
                 questionArea.innerHTML = 'Done';
                 percentScore = document.getElementById("percent-score");
                 percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
-
+                showSubmitButton();
+                
                 // score.innerHTML = totalScore;
                 answerArea.innerHTML = '';
                 clearInterval(intervalCountdown)
@@ -148,7 +149,6 @@ window.onload = function () {
 
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
-        showSubmitButton();
         localStorage.setItem('score', totalScore);
         localStorage.setItem('value', initials.value);        
         start.style.display = 'inline-block';
