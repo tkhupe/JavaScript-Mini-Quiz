@@ -6,7 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     background-color: orange
   }
-  
+
   .wrapper {
     width: 650px;
     margin: 0 auto;
@@ -21,8 +21,7 @@ body, html {
     border-radius: 5%;
     color: white;
     text-align: center;
-    box-shadow: 10px 10px 30px 30px whitesmoke;
-     
+    box-shadow: 10px 10px 30px 30px whitesmoke;     
 }
   
   #quiz > h1 {
@@ -43,8 +42,7 @@ body, html {
   
   .answers div {
     padding: 10px 1px 10px 10px;
-    font-size: 16px;
-    
+    font-size: 16px;    
   }
   
   .answers div:hover {
@@ -53,9 +51,7 @@ body, html {
   }
   
   .answers {
-    padding: 10px 10px 10px 10px;
-    
-    
+    padding: 10px 10px 10px 10px;    
   }
   
   .answers div {
@@ -64,8 +60,7 @@ body, html {
     padding-bottom: 15px;
     /* border-top: 1px solid black; */
     border: 5px solid wheat;
-    background-color: blue;
-    
+    background-color: blue;    
   }
   
   .record-data { 
@@ -79,12 +74,13 @@ body, html {
     width: 200px;
     margin: 0 auto;
   }
+
   .checkAnswers {
     /* border: 5px solid pink; */
     background-color:blue;
     padding: 10px;
   }
-  
+
   .correct, .false {
     background-color: #109D59;
     width: 60px;
@@ -99,6 +95,7 @@ body, html {
   .false {
     background-color: #DC4437;
   }
+
   @media screen and (max-width:992px) {
     .wrapper{
       width: 70%;
@@ -117,6 +114,5 @@ body, html {
     }
     .checkAnswers {
       padding: 5px 5px 5px 5px;
-    }
-    
+    }    
   }
