@@ -130,9 +130,6 @@ window.onload = function () {
 
         } else { counter.innerHTML = value }
 
-        if (questionArea.innerHTML !== 'Done')  {
-            hideSubmitButton();
-        }
 
 
     }
@@ -158,6 +155,8 @@ window.onload = function () {
         totalScore = 0;
         current = 0;
         score.innerHTML =''
+        localStorage.setItem('score', totalScore);
+        localStorage.setItem('value', initials);
         
 
     }
@@ -166,9 +165,14 @@ window.onload = function () {
         start.style.display = 'none';
     }
 
-    function hideSubmitButton() {
-        submit.style.display = 'none';
-    }
+    // if (questionArea.innerHTML = '')  {
+    //     hideSubmitButton();
+    // }
+
+
+    // function hideSubmitButton() {
+    //     submit.style.display = 'none';
+    // }
 
 
 
