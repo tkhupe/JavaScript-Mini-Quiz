@@ -147,6 +147,8 @@ window.onload = function () {
 
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
+        localStorage.setItem('score', totalScore);
+        localStorage.setItem('value', initials.value);        
         start.style.display = 'inline-block';
         counter.innerHTML = 50;
         questionArea.innerHTML = '';
@@ -155,9 +157,6 @@ window.onload = function () {
         totalScore = 0;
         current = 0;
         score.innerHTML =''
-        localStorage.setItem('score', totalScore);
-        localStorage.setItem('value', initials);
-        
 
     }
 
