@@ -3,7 +3,7 @@
 ## Description
 
 - JavaScript mini quiz assignment
-- to create  a  javaScript program for assessments
+- To create  a  javaScript program for assessments
 - I learned how the flow of JavaScript is designed.
 
 ## Table of Contents 
