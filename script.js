@@ -140,6 +140,7 @@ window.onload = function () {
         loadAnswers(current);
         intervalCountdown = setInterval(countDown, 1000);
         removeStartButton();
+        hideSubmitButton();
 
     }
     
@@ -147,6 +148,7 @@ window.onload = function () {
 
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
+        preventDefault(hideSubmitButton());
         localStorage.setItem('score', totalScore);
         localStorage.setItem('value', initials.value);        
         start.style.display = 'inline-block';
@@ -169,9 +171,9 @@ window.onload = function () {
     // }
 
 
-    // function hideSubmitButton() {
-    //     submit.style.display = 'none';
-    // }
+    function hideSubmitButton() {
+        submit.style.display = 'none';
+    }
 
 
 
