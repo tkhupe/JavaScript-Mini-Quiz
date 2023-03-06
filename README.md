@@ -1,5 +1,4 @@
 # JavaScript-Mini-Quiz
-
 ## Description
 
 - JavaScript mini quiz assignment
