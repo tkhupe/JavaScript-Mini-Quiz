@@ -148,7 +148,7 @@ window.onload = function () {
 
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
-        preventDefault(hideSubmitButton());
+        showSubmitButton();
         localStorage.setItem('score', totalScore);
         localStorage.setItem('value', initials.value);        
         start.style.display = 'inline-block';
@@ -166,9 +166,9 @@ window.onload = function () {
         start.style.display = 'none';
     }
 
-    // if (questionArea.innerHTML = '')  {
-    //     hideSubmitButton();
-    // }
+    function showSubmitButton() {
+        submit.style.display = 'inline-block';
+    }
 
 
     function hideSubmitButton() {
