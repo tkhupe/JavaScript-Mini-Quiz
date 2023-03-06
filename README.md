@@ -1,14 +1,13 @@
-# JavaScript-fundamentals-assessment
-
+# JavaScript-Mini-Quiz
 
 ## Description
 
-- JavaScript mini quiz assessment 
+- JavaScript mini quiz assignment
 - to create  a  javaScript program for assessments
 - I learned how the flow of JavaScript is designed.
 
 ## Table of Contents 
-- [JavaScript-fundamentals-assessment](#javascript-fundamentals-assessment)
+- [JavaScript-Mini-Quiz](#javascript-mini-quiz)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
