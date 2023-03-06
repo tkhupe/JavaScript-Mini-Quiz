@@ -11,14 +11,13 @@ window.onload = function () {
     var totalScore = 0;
     let current = 0;
 
-
     allQuestions = {
 
         "What will the code: (console.log(1 + 2 * 3)) print?": ['6', '7', '9', '123', 1],
 
-        "Which of the following is mutable?": ['Array', 'Number', 'string', 'boolean', 0],
+        "Which of the following is mutable?": ['Array', 'Number', 'String', 'Boolean', 0],
 
-        "What will the code: console.log(1 == '1.0') print?": ['NaN', 'false', 'true', 'undefined', 2],
+        "What will the code: console.log(1 == '1.0') print?": ['NaN', 'False', 'True', 'Undefined', 2],
 
         "Which of the following is NOT true?": ['!A && !B === !(A||B)', 'A && B === !A || !B',
             '!(!A && !B) === A || B', '!(A && B) === !A ||!B', 1],
@@ -27,11 +26,7 @@ window.onload = function () {
             'Divides a string sentence into an array containing each word',
             'Removes the first character from a string',
             'Extracts a section of a string and returns a new string', 3]
-
     };
-
-
-
 
     function loadQuestion(curr) {
 
@@ -40,7 +35,6 @@ window.onload = function () {
         questionArea.innerHTML = '';
 
         questionArea.innerHTML = question;
-
 
     }
 
@@ -60,7 +54,6 @@ window.onload = function () {
             answerArea.appendChild(createDiv);
 
         }
-
 
     }
 
@@ -131,8 +124,6 @@ window.onload = function () {
 
         } else { counter.innerHTML = value }
 
-
-
     }
 
     function begin() {
@@ -142,7 +133,6 @@ window.onload = function () {
         intervalCountdown = setInterval(countDown, 1000);
         removeStartButton();
         hideSubmitButton();
-
     }
     
     function scoreReport() {
@@ -170,15 +160,9 @@ window.onload = function () {
         submit.style.display = 'inline-block';
     }
 
-
     function hideSubmitButton() {
         submit.style.display = 'none';
     }
-
-
-
-
-
 
     start.addEventListener("click", function () { begin() });
     submit.addEventListener("click", function () { scoreReport() })
