@@ -10,8 +10,7 @@ window.onload = function () {
     let intervalCountdown;
     var totalScore = 0;
     let current = 0;
-    var initialsArray = [];
-    var scoreArray = [];
+    var scoreReportArray = [];
 
     allQuestions = {
 
@@ -81,57 +80,57 @@ window.onload = function () {
                 questionArea.innerHTML = 'Done';
                 percentScore = document.getElementById("percent-score");
                 percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
+                
                 showSubmitButton();
-                scoreArray.push(totalScore);
-                initialsArray.push(initials.value);
+                // allScoresReport();
                 
                 // score.innerHTML = totalScore;
                 answerArea.innerHTML = '';
                 clearInterval(intervalCountdown)
             }
-
+            
         };
     }
-
+    
     function addChecker(bool) {
-
+        
         var createDiv = document.createElement('div'),
-            text = document.createTextNode(current + 1);
-
+        text = document.createTextNode(current + 1);
+        
         createDiv.appendChild(text);
-
+        
         if (bool) {
-
+            
             totalScore++;
             createDiv.className += 'correct';
             checker.appendChild(createDiv);
-
+            
         } else {
             createDiv.className += 'false';
             checker.appendChild(createDiv);
-
+            
         }
     }
     function countDown() {
         let value = counter.innerHTML
         value = value - 1;
         if (value == 0 || value < 0) {
-
+            
             score.innerHTML = totalScore;
-
+            
             questionArea.innerHTML = 'Done';
             percentScore = document.getElementById("percent-score");
             percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
-
+            
             answerArea.innerHTML = '';
             clearInterval(intervalCountdown)
-
+            
         } else { counter.innerHTML = value }
-
+        
     }
-
+    
     function begin() {
-
+        
         loadQuestion(current);
         loadAnswers(current);
         intervalCountdown = setInterval(countDown, 1000);
@@ -140,11 +139,13 @@ window.onload = function () {
     }
     
     function scoreReport() {
-
+        
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
-        localStorage.setItem('score', JSON.stringify(totalScore));
-        localStorage.setItem('value', JSON.stringify(initials.value));     
+        // localStorage.setItem('score', JSON.stringify(totalScore));
+        // localStorage.setItem('value', JSON.stringify(initials.value));     
+        scoreReportArray.push({totalScore, initials: initials.value});
+        localStorage.setItem('scoreHistory', JSON.stringify(scoreReportArray));
         start.style.display = 'inline-block';
         counter.innerHTML = 50;
         questionArea.innerHTML = '';
@@ -156,9 +157,9 @@ window.onload = function () {
 
     }
 
-    function allScoresReport() {
-        
-    }
+    
+            
+    
 
     function removeStartButton() {
         start.style.display = 'none';
