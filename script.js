@@ -10,6 +10,8 @@ window.onload = function () {
     let intervalCountdown;
     var totalScore = 0;
     let current = 0;
+    var initialsArray = [];
+    var scoreArray = [];
 
     allQuestions = {
 
@@ -80,6 +82,8 @@ window.onload = function () {
                 percentScore = document.getElementById("percent-score");
                 percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
                 showSubmitButton();
+                scoreArray.push(totalScore);
+                initialsArray.push(initials.value);
                 
                 // score.innerHTML = totalScore;
                 answerArea.innerHTML = '';
@@ -139,8 +143,8 @@ window.onload = function () {
 
         percentScore = document.getElementById("percent-score");
         percentScore.innerHTML = '';
-        localStorage.setItem('score', totalScore);
-        localStorage.setItem('value', initials.value);        
+        localStorage.setItem('score', JSON.stringify(totalScore));
+        localStorage.setItem('value', JSON.stringify(initials.value));     
         start.style.display = 'inline-block';
         counter.innerHTML = 50;
         questionArea.innerHTML = '';
@@ -150,6 +154,10 @@ window.onload = function () {
         current = 0;
         score.innerHTML =''
 
+    }
+
+    function allScoresReport() {
+        
     }
 
     function removeStartButton() {
