@@ -80,13 +80,13 @@ window.onload = function () {
                 questionArea.innerHTML = 'Done';
                 percentScore = document.getElementById("percent-score");
                 percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
-                
                 showSubmitButton();
+                answerArea.innerHTML = '';
+                clearInterval(intervalCountdown)
+                
                 // allScoresReport();
                 
                 // score.innerHTML = totalScore;
-                answerArea.innerHTML = '';
-                clearInterval(intervalCountdown)
             }
             
         };
