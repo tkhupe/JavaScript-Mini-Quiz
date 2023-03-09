@@ -119,6 +119,7 @@ window.onload = function () {
             score.innerHTML = totalScore;
             
             questionArea.innerHTML = 'Done';
+            showSubmitButton();
             percentScore = document.getElementById("percent-score");
             percentScore.innerHTML = (totalScore / Object.keys(allQuestions).length * 100) + "%";
             
